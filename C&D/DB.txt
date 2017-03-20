@@ -1,0 +1,69 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: May 16, 2009 at 04:17 PM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `eydl`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `doctime`
+-- 
+
+CREATE TABLE `doctime` (
+  `date` date NOT NULL default '0000-00-00',
+  `time` int(3) NOT NULL default '7',
+  `userid` int(11) NOT NULL default '0',
+  `bankreicept` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `docid` int(11) NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `doctime`
+-- 
+
+INSERT INTO `doctime` VALUES ('2005-11-23', 6, 24, '34653465354634', 23);
+INSERT INTO `doctime` VALUES ('0000-00-00', 6, 24, '', 23);
+INSERT INTO `doctime` VALUES ('2005-11-23', 7, 24, '', 23);
+INSERT INTO `doctime` VALUES ('2009-02-12', 5, 25, '12345', 23);
+INSERT INTO `doctime` VALUES ('2009-02-12', 5, 28, '6789', 25);
+INSERT INTO `doctime` VALUES ('2009-02-13', 6, 28, '', 23);
+INSERT INTO `doctime` VALUES ('2009-02-12', 7, 28, '', 25);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `user`
+-- 
+
+CREATE TABLE `user` (
+  `name` varchar(12) collate latin1_general_ci NOT NULL default '',
+  `fname` varchar(12) collate latin1_general_ci NOT NULL default '',
+  `melli` bigint(20) NOT NULL default '0',
+  `pdlnumber` bigint(20) NOT NULL default '0',
+  `pdldate` year(4) NOT NULL default '0000',
+  `email` varchar(30) collate latin1_general_ci NOT NULL default '',
+  `telephone` bigint(12) NOT NULL default '0',
+  `address` text collate latin1_general_ci NOT NULL,
+  `ID` bigint(11) NOT NULL auto_increment,
+  `login` varchar(10) collate latin1_general_ci NOT NULL default 'user',
+  `docchecked` varchar(4) collate latin1_general_ci NOT NULL default 'no',
+  `confirmed` char(3) collate latin1_general_ci NOT NULL default 'no',
+  `glass` char(3) collate latin1_general_ci NOT NULL default 'no',
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=37 ;
+
+-- 
+-- Dumping data for table `user`
+-- 
+
+INSERT INTO `user` VALUES ('admin', 'admin', 1234, 1234, 2005, 'amirsa_salehzadeh@yahoo.com', 127, 'sdfgsdfg sdfg sdfg ', 1, 'admin', 'no', 'no', 'no');
+INSERT INTO `user` VALUES ('test', 'test', 2345, 23454, 2003, '2003', 2005464, 'FGDH DSFGHSEWDS GFSFDG', 36, 'user', 'yes', 'no', 'yes');
+INSERT INTO `user` VALUES ('amir', 'saleh', 1234, 2005, 2005, 'sdfgsdfg', 345634563, 'fjfyt jdrtjhdfghd fgd h d', 35, 'doc', 'no', 'no', 'no');
+        
